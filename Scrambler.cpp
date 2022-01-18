@@ -1,6 +1,7 @@
 #include "Scrambler.h"
+#include <ctime>
 
-// Кодирование файла
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 void Scrambler::encode_file()
 {
     std::cout << "Print a way to file to encode: ";
@@ -23,9 +24,9 @@ void Scrambler::encode_file()
 Scrambler::Scrambler(std::pair<ull, ull> publ_key) : public_key(publ_key)
 {
     srand(time(0));
-    bit_mask = rand() % 256; // Получение случайной маски байта
+    bit_mask = rand() % 256; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     this->encode_file();
-    bit_mask = exp_mod(bit_mask, 257, public_key.second); // Кодирование маски
+    bit_mask = exp_mod(bit_mask, 257, public_key.second); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 
 }
 
